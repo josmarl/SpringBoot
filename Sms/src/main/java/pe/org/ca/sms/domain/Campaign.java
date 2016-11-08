@@ -13,12 +13,12 @@ import java.io.Serializable;
  */
 public class Campaign implements Serializable, Cloneable {
 
+    private static final long serialVersionUID = 1L;
+
     private Long id;
-    private String campaingName;
-    private String description;
-    private String message;
-    private String statusCampaign;
-    private Long departamentId;
+    private String nombre;
+    private String descripcion;
+    private String estado;
 
     public Long getId() {
         return id;
@@ -28,49 +28,33 @@ public class Campaign implements Serializable, Cloneable {
         this.id = id;
     }
 
-    public String getCampaingName() {
-        return campaingName;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCampaingName(String campaingName) {
-        this.campaingName = campaingName;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getMessage() {
-        return message;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getStatusCampaign() {
-        return statusCampaign;
-    }
-
-    public void setStatusCampaign(String statusCampaign) {
-        this.statusCampaign = statusCampaign;
-    }
-
-    public Long getDepartamentId() {
-        return departamentId;
-    }
-
-    public void setDepartamentId(Long departamentId) {
-        this.departamentId = departamentId;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Campaign{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
 
 }

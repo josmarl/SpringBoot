@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import pe.org.ca.sms.domain.Campaign;
-import pe.org.ca.sms.service.CampaignService;
+import pe.org.ca.sms.service.CampaignServiceImpl;
 
 /**
  *
@@ -22,7 +22,7 @@ import pe.org.ca.sms.service.CampaignService;
 public class CampaignController {
 
     @Autowired
-    CampaignService campaignService;
+    CampaignServiceImpl campaignService;
 
     @RequestMapping("/welcome")
     public String redirect() {
@@ -31,7 +31,7 @@ public class CampaignController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<Campaign> allCampaigns() {
-        return campaignService.findAllCampaigns();
+        return campaignService.findCampaigns();
     }
 
 }

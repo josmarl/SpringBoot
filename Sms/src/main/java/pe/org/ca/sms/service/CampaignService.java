@@ -6,22 +6,13 @@
 package pe.org.ca.sms.service;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import pe.org.ca.sms.domain.Campaign;
-import pe.org.ca.sms.mapper.CampaignMapper;
 
 /**
  *
- * @author itecs
+ * @author josmarl
  */
-@Service
-public class CampaignService {
+public interface CampaignService {
 
-    @Autowired
-    CampaignMapper campaignMapper;
-
-    public synchronized List<Campaign> findAllCampaigns() {
-        return campaignMapper.findAllCampaigns();
-    }
+    public List<Campaign> findCampaigns();
 }

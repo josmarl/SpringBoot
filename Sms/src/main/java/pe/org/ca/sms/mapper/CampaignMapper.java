@@ -1,8 +1,8 @@
 package pe.org.ca.sms.mapper;
 
-
 import pe.org.ca.sms.domain.Campaign;
 import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 /*
@@ -14,8 +14,9 @@ import org.apache.ibatis.annotations.Select;
  *
  * @author itecs
  */
+@Mapper
 public interface CampaignMapper {
 
-    @Select("SELECT * FROM Campaign")
-    List<Campaign> findAllCampaigns();
+    @Select("SELECT * FROM JOSMARL.campaign")
+    List<Campaign> findCampaigns();
 }
