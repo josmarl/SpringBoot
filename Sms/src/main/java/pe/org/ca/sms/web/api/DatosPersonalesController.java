@@ -3,35 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.org.ca.sms.controller;
+package pe.org.ca.sms.web.api;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import pe.org.ca.sms.domain.Campaign;
-import pe.org.ca.sms.service.CampaignServiceImpl;
+import pe.org.ca.sms.domain.DatosPersonales;
+import pe.org.ca.sms.service.DatosPersonalesService;
 
 /**
  *
- * @author itecs
+ * @author josmarl
  */
 @RestController
-@RequestMapping("/campaign")
-public class CampaignController {
+@RequestMapping("/persona")
+public class DatosPersonalesController {
 
     @Autowired
-    CampaignServiceImpl campaignService;
-
-    @RequestMapping("/welcome")
-    public String redirect() {
-        return "welcome";
-    }
+    DatosPersonalesService datosPersonalesService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public List<Campaign> allCampaigns() {
-        return campaignService.findCampaigns();
+    public List<DatosPersonales> allDatosPersonales() {
+        return datosPersonalesService.findDatosPersonaleses();
     }
-
 }
